@@ -12,6 +12,8 @@ This was built to be ran on Ubuntu 22.04.1 LTS
 
 `cd guac-scripts`
 
-`chmod a+x install-all.sh`
+`chmod a+x chmod_scripts.sh`
 
-`sudo ./install-all.sh`
+`sudo ./chmod_scripts.sh`
+
+'sudo ./install-all.sh'
