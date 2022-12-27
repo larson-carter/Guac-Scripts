@@ -8,7 +8,7 @@ fi
 
 service tomcat9 restart
 
-/etc/init.d/guacd restart
+service guacd restart
 
 service nginx restart
 
