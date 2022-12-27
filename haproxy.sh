@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if user is root or sudo
+if ! [ $( id -u ) = 0 ]; then
+    echo "Please run this script as sudo or root" 1>&2
+    exit 1
+fi
+
 sudo add-apt-repository ppa:vbernat/haproxy-2.7
 sudo apt-get update
 sudo apt-get install haproxy
