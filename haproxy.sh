@@ -6,11 +6,11 @@ if ! [ $( id -u ) = 0 ]; then
     exit 1
 fi
 
-sudo add-apt-repository ppa:vbernat/haproxy-2.7
-sudo apt-get update
-sudo apt-get install haproxy
+add-apt-repository ppa:vbernat/haproxy-2.7
+apt-get update
+apt-get install haproxy
 
-sudo echo "
+echo "
 global
 daemon
 stats socket /var/run/haproxy.sock mode 777 level admin
@@ -55,6 +55,8 @@ server VM3 192.168.100.119:3389 check fall 3 rise 5 inter 2000 maxconn 1 weight 
 
 " >> /etc/haproxy/haproxy.cfg
 
-sudo haproxy -c -f /etc/haproxy/haproxy.cfg
+haproxy -c -f /etc/haproxy/haproxy.cfg
 
-sudo service haproxy restart
+service haproxy restart
+
+echo "HAProxy is now installed, and is ready to be used!"

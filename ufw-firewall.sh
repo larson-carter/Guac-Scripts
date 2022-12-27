@@ -7,15 +7,17 @@ if ! [ $( id -u ) = 0 ]; then
 fi
 
 # Update OS
-sudo apt update -y
+apt update -y
 
 # Install UFW
-sudo apt install ufw -y
-sudo ufw disable && sudo ufw enable
+apt install ufw -y
+ufw disable && sudo ufw enable
 
 # Secure UFW Firewall
-sudo ufw default deny incoming
+ufw default deny incoming
 
 # Setup RDP For windows Remote Desktop
-sudo ufw allow 3389
-sudo ufw enable
+ufw allow 3389
+ufw enable
+
+echo "UFW Firewall is now installed!"
