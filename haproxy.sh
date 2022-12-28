@@ -10,6 +10,10 @@ add-apt-repository ppa:vbernat/haproxy-2.7
 apt-get update
 apt-get install haproxy
 
+rm -rf /etc/haproxy/haproxy.cfg
+
+touch /etc/haproxy/haproxy.cfg
+
 echo "
 global
 daemon
